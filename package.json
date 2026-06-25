@@ -1,0 +1,42 @@
+{
+  "name": "diff-xlsx",
+  "version": "1.0.0",
+  "description": "Comparateur de fichiers Excel - application de bureau",
+  "main": "main.js",
+  "author": "diff.xlsx",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.diffxlsx.app",
+    "productName": "diff.xlsx",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "build/icon.ico"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "diff.xlsx"
+    }
+  },
+  "keywords": []
+}
